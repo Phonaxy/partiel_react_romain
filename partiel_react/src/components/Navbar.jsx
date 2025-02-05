@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+const Navbar = () => {
     return (
-        <nav>
+        <nav className="desktop-nav">
+            <a href="index.html"><i className="fas fa-film"></i></a>
             <ul>
-                <li><Link to="/">Accueil</Link></li>
-                <li><Link to="/about">À Propos</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/">Films</Link></li>
+                <li><Link to="/">Séries</Link></li>
+                <li><Link to="/">Populaires</Link></li>
             </ul>
         </nav>
     );
-}
+};
+
+export default Navbar;
