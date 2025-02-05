@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const API_MAP = [
     "7c51ce5f51b2a0e2bb3bf45b2afaa9ae",
@@ -25,11 +26,11 @@ const PopularTv = () => {
                 // On fait une requête pour récupérer les séries les mieux notées en français
                 const response = await fetch(`${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=fr-FR&page=1`);
                 const data = await response.json();
-                // On garde seulement les 7 premières séries (sinon c'est trop long)
-                setTv(data.results.slice(0,7));
+                // On garde seulement les 6 premières séries (sinon c'est trop long)
+                setTv(data.results.slice(0,6));
             } catch (error) {
                 // Si jamais y'a un problème, on affiche un message d'erreur dans la console
-                console.error("Erreur lors de la récupération des films :", error);
+                console.error("Erreur lors de la récupération des séries :", error);
             } finally {
                 // Quoi qu'il arrive, on arrête le chargement
                 setLoading(false);
@@ -48,9 +49,11 @@ const PopularTv = () => {
                 <div className="tv-grid">
                     {tvs.map((tv) => ( // Pour chaque série récupérée, on affiche une "carte"
                         <div key={tv.id} className="tv-card">
-                            <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt={tv.title} />
-                            <h3>{tv.title}</h3>
-                            <p>Note : {tv.vote_average}/10</p>
+                            <Link to={`/details/${tv.id}`}>
+                                <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt={tv.title} />
+                                <h3>{tv.title}</h3>
+                                <p>Note : {tv.vote_average}/10</p>
+                            </Link>
                         </div>
                     ))}
                 </div>

@@ -1,0 +1,15 @@
+.actors-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.actor-card {
+    text-align: center;
+    width: 150px;
+}
+
+.actor-card img {
+    width: 100%;
+    border-radius: 10px;
+}
