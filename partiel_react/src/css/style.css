@@ -6,6 +6,59 @@
     font-family: "Roboto";
 }
 
+.movies-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-card {
+    width: 200px;
+    background: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/**/
+.tv-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.tv-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tv-card {
+    width: 200px;
+    background: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tv-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
 .wrapper {
     width: 100%;
     display: -webkit-box;

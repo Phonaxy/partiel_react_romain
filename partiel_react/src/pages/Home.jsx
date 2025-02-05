@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/style.css';
 import Navbar from "../components/Navbar.jsx";
+import PopularMovies from "../components/PopularMovies";
+import PopularTv from "../components/PopularTV";
 
 function Home() {
     const [activeButton, setActiveButton] = useState('day');
@@ -56,7 +58,7 @@ function Home() {
                     <div className="grid-tendances" id="tendances"></div>
                 </div>
             </div>
-
+            <PopularMovies />  {/*Appelle du component qui récupuere les films*/}
             <div className="wrapper-pop">
                 <div className="populaires-container container">
                     {/* Ici les films/séries populaires */}
@@ -68,7 +70,7 @@ function Home() {
                     <div className="grid-tendances" id="populaires"></div>
                 </div>
             </div>
-
+            <PopularTv/>  {/*Appelle du component qui récupuere les séries */}
             {/* Footer */}
             <footer>
                 <p>Tous droits réservés</p>
